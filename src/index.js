@@ -2,7 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux'
-
+import { LocaleProvider } from 'antd'
+import enUS from 'antd/lib/locale-provider/en_US'
+import 'antd/dist/antd.css'
 import './index.css'
 import App from './App'
 import registerServiceWorker from './registerServiceWorker'
@@ -19,9 +21,11 @@ const store = createStore(reducer,
 const rootEl = document.getElementById('root')
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <LocaleProvider locale={enUS}>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </LocaleProvider>,
   rootEl
 )
 
@@ -29,9 +33,11 @@ if (module.hot) {
   module.hot.accept('./App', () => {
     const NextApp = require('./App').default
     ReactDOM.render(
-      <Provider store={store}>
-        <NextApp />
-      </Provider>,
+      <LocaleProvider locale={enUS}>
+        <Provider store={store}>
+          <NextApp />
+        </Provider>
+      </LocaleProvider>,
       rootEl
     )
   })
