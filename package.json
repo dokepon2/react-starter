@@ -1,7 +1,10 @@
 {
   "name": "react-starter",
   "version": "0.1.0",
-  "private": true,
+  "author": {
+    "name": "Dokepon2"
+  },
+  "license": "MIT",
   "dependencies": {
     "antd": "^2.13.4",
     "prop-types": "^15.6.0",
